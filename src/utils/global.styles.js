@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
+    color: ${({ theme }) => theme.colors.greyDark2}
   }
 `
 export default GlobalStyle
