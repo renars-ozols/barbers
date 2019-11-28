@@ -1,10 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Fade from 'react-reveal/Fade'
+import { FaArrowCircleDown } from 'react-icons/fa'
 
 import TopNavigation from '../top-navigation/top-navigation'
 import FixedNav from '../fixed-nav/fixed-nav'
-import { Hero, LogoWrapper, StyledLogo } from './header.styles'
+import { Hero, LogoWrapper, StyledLogo, ArrowLink } from './header.styles'
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -33,6 +34,9 @@ const Header = () => {
             <StyledLogo />
           </Fade>
         </LogoWrapper>
+        <ArrowLink href="#">
+          <FaArrowCircleDown />
+        </ArrowLink>
       </Hero>
       <FixedNav />
     </>
