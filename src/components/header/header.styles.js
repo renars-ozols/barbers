@@ -35,4 +35,8 @@ export const ArrowLink = styled.a`
   font-size: 2rem;
   margin: 0 auto 3rem auto;
   color: ${({ theme }) => theme.colors.greyLight1};
+
+  ${({ theme }) => theme.media.tablet`
+      display: none;
+  `}
 `

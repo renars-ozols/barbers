@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { throttle } from 'lodash'
+import { IoIosMenu } from 'react-icons/io'
+import { FiMessageSquare } from 'react-icons/fi'
+import { FaArrowAltCircleUp } from 'react-icons/fa'
 
-import { NavWrapper } from './fixed-nav.styles'
+import { NavWrapper, NavButton } from './fixed-nav.styles'
 
 const FixedNav = () => {
   const [visible, setVisible] = useState(false)
@@ -17,9 +20,18 @@ const FixedNav = () => {
       window.removeEventListener('scroll', handler)
     }
   })
+
   return (
     <NavWrapper visible={visible}>
-      <h1>FixedNav</h1>
+      <NavButton>
+        <IoIosMenu />
+      </NavButton>
+      <NavButton style={{ marginLeft: `auto` }}>
+        <FiMessageSquare />
+      </NavButton>
+      <NavButton>
+        <FaArrowAltCircleUp />
+      </NavButton>
     </NavWrapper>
   )
 }
