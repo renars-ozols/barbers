@@ -5,6 +5,7 @@ export const NavWrapper = styled.nav`
   opacity: ${props => (props.visible ? '1' : '0')};
   position: fixed;
   width: 100%;
+  padding: 0 0.5rem;
   bottom: 0;
   z-index: 100;
   background: ${({ theme }) => theme.colors.primary};
@@ -16,8 +17,8 @@ export const NavWrapper = styled.nav`
 `
 export const NavButton = styled.button`
   display: flex;
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 2.5rem;
+  padding: 1rem 0.5rem;
   border: none;
   background-color: transparent;
   color: ${({ theme }) => theme.colors.greyLight1};
