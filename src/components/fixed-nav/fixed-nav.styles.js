@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const NavWrapper = styled.nav`
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
   display: flex;
-  opacity: ${props => (props.visible ? '1' : '0')};
   position: fixed;
   width: 100%;
   bottom: 0;

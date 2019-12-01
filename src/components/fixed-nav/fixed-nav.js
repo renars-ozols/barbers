@@ -4,6 +4,7 @@ import { IoIosMenu } from 'react-icons/io'
 import { FiMessageSquare } from 'react-icons/fi'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
 
+import CustomModal from '../modal/modal'
 import { NavWrapper, NavButton } from './fixed-nav.styles'
 
 const FixedNav = () => {
@@ -23,12 +24,12 @@ const FixedNav = () => {
 
   return (
     <NavWrapper visible={visible}>
-      <NavButton>
+      <NavButton style={{ marginRight: `auto` }}>
         <IoIosMenu />
       </NavButton>
-      <NavButton style={{ marginLeft: `auto` }}>
+      <CustomModal Button={NavButton}>
         <FiMessageSquare />
-      </NavButton>
+      </CustomModal>
       <NavButton>
         <FaArrowAltCircleUp />
       </NavButton>
