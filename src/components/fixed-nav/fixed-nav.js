@@ -11,18 +11,16 @@ import {
 import * as Scroll from 'react-scroll'
 
 import CustomModal from '../modal/modal'
-import Menu from '../fixed-nav-menu/fixed-nav-menu'
 import { NavWrapper, NavButton } from './fixed-nav.styles'
 
 class FixedNav extends React.PureComponent {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.scrollToTop = this.scrollToTop.bind(this)
     this.state = {
       navbarIsVisible: false,
       modalIsOpen: false,
       modalLabel: '',
-      modalContent: {},
       modalStyles: {},
     }
   }
@@ -45,9 +43,12 @@ class FixedNav extends React.PureComponent {
 
   menuStyles = {
     overlay: {
-      background: 'red',
+      background: 'transparent',
     },
     content: {
+      display: 'flex',
+      justifyContent: 'center',
+      background: '#c69963',
       top: '50%',
       left: '1rem',
       right: '60%',
@@ -63,18 +64,15 @@ class FixedNav extends React.PureComponent {
 
   handler = throttle(this.checkVisible, 500)
 
-  openModal = (content, styles, label) => {
-    console.log(this.props)
+  openModal = (styles, label) => {
     if (!this.state.modalIsOpen) {
       disableBodyScroll(this.targetElement)
       this.setState({
         modalIsOpen: true,
         modalLabel: label,
-        modalContent: content,
         modalStyles: styles,
       })
-    } else if (this.state.modalIsOpen && this.state.modalContent !== content) {
-      disableBodyScroll(this.targetElement)
+    } else if (this.state.modalIsOpen && this.state.modalLabel !== label) {
       this.setState(
         {
           modalIsOpen: false,
@@ -83,7 +81,6 @@ class FixedNav extends React.PureComponent {
           this.setState({
             modalIsOpen: true,
             modalLabel: label,
-            modalContent: content,
             modalStyles: styles,
           })
         }
@@ -121,34 +118,19 @@ class FixedNav extends React.PureComponent {
   }
 
   render() {
-    const {
-      navbarIsVisible,
-      modalIsOpen,
-      modalLabel,
-      modalContent,
-      modalStyles,
-    } = this.state
-    const { menuLinks } = this.props
+    const { navbarIsVisible, modalIsOpen, modalLabel, modalStyles } = this.state
     return (
       <>
         <NavWrapper visible={navbarIsVisible}>
           <NavButton
             style={{ marginRight: `auto` }}
-            onClick={() =>
-              this.openModal(
-                <Menu links={menuLinks} closeModal={this.closeModal} />,
-                this.menuStyles,
-                'Menu'
-              )
-            }
+            onClick={() => this.openModal(this.menuStyles, 'Menu')}
           >
             <IoIosMenu />
           </NavButton>
 
           <NavButton
-            onClick={() =>
-              this.openModal('message', this.messageStyles, 'Message')
-            }
+            onClick={() => this.openModal(this.messageStyles, 'Message')}
           >
             <FiMessageSquare />
           </NavButton>
@@ -161,7 +143,6 @@ class FixedNav extends React.PureComponent {
           customStyles={modalStyles}
           closeModal={this.closeModal}
           modalIsOpen={modalIsOpen}
-          content={modalContent}
           label={modalLabel}
         />
       </>

@@ -1,5 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
+
+import Menu from '../fixed-nav-menu/fixed-nav-menu'
 
 Modal.setAppElement(`#___gatsby`)
 
@@ -8,7 +11,6 @@ const CustomModal = ({
   modalIsOpen,
   closeModal,
   targetRef,
-  content,
   label,
 }) => {
   return (
@@ -21,40 +23,18 @@ const CustomModal = ({
         contentLabel={label}
         ref={targetRef}
       >
-        <h1>{content}</h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
-          quis exercitationem culpa nesciunt nihil aut nostrum explicabo
-          reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
-          Voluptatum ducimus voluptates voluptas?
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
-          quis exercitationem culpa nesciunt nihil aut nostrum explicabo
-          reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
-          Voluptatum ducimus voluptates voluptas?
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
-          quis exercitationem culpa nesciunt nihil aut nostrum explicabo
-          reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
-          Voluptatum ducimus voluptates voluptas?
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
-          quis exercitationem culpa nesciunt nihil aut nostrum explicabo
-          reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
-          Voluptatum ducimus voluptates voluptas?
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
-          quis exercitationem culpa nesciunt nihil aut nostrum explicabo
-          reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
-          Voluptatum ducimus voluptates voluptas?
-        </h1>
+        {label === 'Menu' ? <Menu closeModal={closeModal} /> : <h1>Message</h1>}
       </Modal>
     </>
   )
+}
+
+CustomModal.propTypes = {
+  customStyles: PropTypes.object.isRequired,
+  modalIsOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+  targetRef: PropTypes.object.isRequired,
+  label: PropTypes.string.isRequired,
 }
 
 export default CustomModal

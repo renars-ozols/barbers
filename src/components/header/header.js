@@ -17,14 +17,6 @@ const Header = () => {
           }
         }
       }
-      menuLinks: site {
-        siteMetadata {
-          menuLinks {
-            name
-            link
-          }
-        }
-      }
     }
   `)
 
@@ -46,7 +38,7 @@ const Header = () => {
           <FaArrowCircleDown />
         </ArrowLink>
       </Hero>
-      <FixedNav menuLinks={data.menuLinks.siteMetadata.menuLinks} />
+      <FixedNav />
     </>
   )
 }

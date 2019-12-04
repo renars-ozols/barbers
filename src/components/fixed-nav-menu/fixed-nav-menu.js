@@ -1,16 +1,36 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-const Menu = ({ links, closeModal }) => {
+import { StyledNav, StyledLink } from './fixed-nav-menu.styles'
+
+const Menu = ({ closeModal }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      menuLinks: site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+          }
+        }
+      }
+    }
+  `)
+  const links = data.menuLinks.siteMetadata.menuLinks
   return (
-    <nav>
+    <StyledNav>
       {links.map(link => (
-        <Link key={link.name} to={link.link} onClick={closeModal}>
+        <StyledLink key={link.name} to={link.link} onClick={closeModal}>
           {link.name}
-        </Link>
+        </StyledLink>
       ))}
-    </nav>
+    </StyledNav>
   )
+}
+
+Menu.propTypes = {
+  closeModal: PropTypes.func.isRequired,
 }
 
 export default Menu
