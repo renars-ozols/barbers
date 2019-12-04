@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 
 import Menu from '../fixed-nav-menu/fixed-nav-menu'
+import ContactForm from '../contact-form/contact-form'
 
 Modal.setAppElement(`#___gatsby`)
 
@@ -23,7 +24,7 @@ const CustomModal = ({
         contentLabel={label}
         ref={targetRef}
       >
-        {label === 'Menu' ? <Menu closeModal={closeModal} /> : <h1>Message</h1>}
+        {label === 'Menu' ? <Menu closeModal={closeModal} /> : <ContactForm />}
       </Modal>
     </>
   )
