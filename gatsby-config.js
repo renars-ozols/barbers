@@ -3,6 +3,24 @@ module.exports = {
     title: `Barbers`,
     description: `Barbers website`,
     author: `Renars`,
+    menuLinks: [
+      {
+        name: 'Link1',
+        link: '/#test1',
+      },
+      {
+        name: 'Link2',
+        link: '/#test2',
+      },
+      {
+        name: 'Link3',
+        link: '/#test3',
+      },
+      {
+        name: 'Link4',
+        link: '/#test1',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

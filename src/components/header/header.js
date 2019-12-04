@@ -10,10 +10,18 @@ import { Hero, LogoWrapper, StyledLogo, ArrowLink } from './header.styles'
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "hero.jpg" }) {
+      background: file(relativePath: { eq: "hero.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      menuLinks: site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
           }
         }
       }
@@ -21,7 +29,7 @@ const Header = () => {
   `)
 
   const imageStack = [
-    data.file.childImageSharp.fluid,
+    data.background.childImageSharp.fluid,
     `linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93))`,
   ].reverse()
 
@@ -38,7 +46,7 @@ const Header = () => {
           <FaArrowCircleDown />
         </ArrowLink>
       </Hero>
-      <FixedNav />
+      <FixedNav menuLinks={data.menuLinks.siteMetadata.menuLinks} />
     </>
   )
 }

@@ -1,42 +1,27 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import Modal from 'react-modal'
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock'
 
 Modal.setAppElement(`#___gatsby`)
 
-const CustomModal = ({ Button, children }) => {
-  const [modalIsOpen, setOpen] = useState(false)
-  const closeModal = () => {
-    setOpen(false)
-    enableBodyScroll(targetRef)
-  }
-  const targetRef = useRef(null)
-  const check = () => {
-    modalIsOpen ? disableBodyScroll(targetRef) : enableBodyScroll(targetRef)
-  }
+const CustomModal = ({
+  customStyles,
+  modalIsOpen,
+  closeModal,
+  targetRef,
+  content,
+  label,
+}) => {
   return (
     <>
-      <Button
-        onClick={() => {
-          setOpen(!modalIsOpen)
-          modalIsOpen
-            ? enableBodyScroll(targetRef)
-            : disableBodyScroll(targetRef)
-        }}
-      >
-        {children}
-      </Button>
       <Modal
         isOpen={modalIsOpen}
         shouldCloseOnOverlayClick={true}
         onRequestClose={closeModal}
-        contentLabel="modal"
+        style={customStyles}
+        contentLabel={label}
         ref={targetRef}
       >
+        <h1>{content}</h1>
         <h1>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
           quis exercitationem culpa nesciunt nihil aut nostrum explicabo
