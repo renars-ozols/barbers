@@ -10,8 +10,9 @@ import {
 } from 'body-scroll-lock'
 import * as Scroll from 'react-scroll'
 
+import IconButton from '../icon-button/icon-button'
 import CustomModal from '../modal/modal'
-import { NavWrapper, NavButton } from './fixed-nav.styles'
+import { NavWrapper } from './fixed-nav.styles'
 
 class FixedNav extends React.PureComponent {
   constructor() {
@@ -31,13 +32,16 @@ class FixedNav extends React.PureComponent {
   messageStyles = {
     overlay: {
       background: 'rgba(0, 0, 0, 0.7)',
+      zIndex: '200',
     },
     content: {
-      top: '20%',
+      top: '5%',
       left: '10%',
       right: '10%',
-      bottom: '20%',
+      bottom: '5%',
       border: 'none',
+      overflow: 'visible',
+      padding: '0',
     },
   }
 
@@ -122,21 +126,21 @@ class FixedNav extends React.PureComponent {
     return (
       <>
         <NavWrapper visible={navbarIsVisible}>
-          <NavButton
+          <IconButton
             style={{ marginRight: `auto` }}
             onClick={() => this.openModal(this.menuStyles, 'Menu')}
           >
             <IoIosMenu />
-          </NavButton>
+          </IconButton>
 
-          <NavButton
+          <IconButton
             onClick={() => this.openModal(this.messageStyles, 'Message')}
           >
             <FiMessageSquare />
-          </NavButton>
-          <NavButton name="Back to Top" onClick={this.scrollToTop}>
+          </IconButton>
+          <IconButton name="Back to Top" onClick={this.scrollToTop}>
             <FaArrowAltCircleUp />
-          </NavButton>
+          </IconButton>
         </NavWrapper>
         <CustomModal
           targetRef={this.targetRef}

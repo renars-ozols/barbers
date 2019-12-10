@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
+import { IoIosClose, IoIosCloseCircleOutline } from 'react-icons/io'
 
+import IconButton from '../icon-button/icon-button'
+import Button from '../button/button'
 import FormInput from '../form-input/form-input.component'
-import { Heading } from './contact-form.styles'
+import {
+  Container,
+  Message,
+  StyledForm,
+  Heading,
+  CloseButton,
+} from './contact-form.styles'
 
-const ContactForm = () => {
+const ContactForm = ({ closeModal }) => {
+  const [message, setMessage] = useState(false)
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -21,12 +31,42 @@ const ContactForm = () => {
         .required('Required'),
       message: yup.string().required('Required'),
     }),
+
+    onSubmit: (values, { setSubmitting, resetForm }) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2))
+        setSubmitting(false)
+        setMessage(true)
+        resetForm()
+      }, 5000)
+    },
   })
 
   return (
-    <div>
+    <Container>
+      <CloseButton onClick={closeModal}>
+        <IoIosClose />
+      </CloseButton>
       <Heading>Contact Us</Heading>
-      <form name="Contact Form" onSubmit={formik.handleSubmit} noValidate>
+      <Message show={message}>
+        <h3>
+          Thank You!
+          <br />
+          We will get back to you shortly &nbsp;:)
+        </h3>
+        <IconButton
+          css={`
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+          `}
+          onClick={() => setMessage(false)}
+        >
+          <IoIosCloseCircleOutline />
+        </IconButton>
+      </Message>
+      <StyledForm name="Contact Form" onSubmit={formik.handleSubmit} noValidate>
         <FormInput
           id="name"
           name="name"
@@ -35,7 +75,11 @@ const ContactForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.name}
+          border={formik.touched.name && formik.errors.name && '1px solid red'}
         />
+        {formik.touched.name && formik.errors.name ? (
+          <span>{formik.errors.name}</span>
+        ) : null}
         <FormInput
           id="email"
           name="email"
@@ -44,7 +88,13 @@ const ContactForm = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
+          border={
+            formik.touched.email && formik.errors.email && '1px solid red'
+          }
         />
+        {formik.touched.email && formik.errors.email ? (
+          <span>{formik.errors.email}</span>
+        ) : null}
         <FormInput
           as="textarea"
           id="message"
@@ -55,12 +105,27 @@ const ContactForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.message}
           rows="6"
+          style={{ resize: `none` }}
+          border={
+            formik.touched.message && formik.errors.message && '1px solid red'
+          }
         />
-        {formik.touched.email && formik.errors.email ? (
-          <span>{formik.errors.email}</span>
+        {formik.touched.message && formik.errors.message ? (
+          <span>{formik.errors.message}</span>
         ) : null}
-      </form>
-    </div>
+        <Button
+          css={`
+            width: 100%;
+            margin-top: 2rem;
+          `}
+          upperCase
+          type="submit"
+          disabled={formik.isSubmitting}
+        >
+          {formik.isSubmitting ? 'Submiting....' : 'Submit'}
+        </Button>
+      </StyledForm>
+    </Container>
   )
 }
 

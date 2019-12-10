@@ -24,7 +24,11 @@ const CustomModal = ({
         contentLabel={label}
         ref={targetRef}
       >
-        {label === 'Menu' ? <Menu closeModal={closeModal} /> : <ContactForm />}
+        {label === 'Menu' ? (
+          <Menu closeModal={closeModal} />
+        ) : (
+          <ContactForm closeModal={closeModal} />
+        )}
       </Modal>
     </>
   )
