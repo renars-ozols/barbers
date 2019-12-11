@@ -49,11 +49,9 @@ const ContactForm = ({ closeModal }) => {
       </CloseButton>
       <Heading>Contact Us</Heading>
       <Message show={message}>
-        <h3>
-          Thank You!
-          <br />
-          We will get back to you shortly &nbsp;:)
-        </h3>
+        Thank You!
+        <br />
+        We will get back to you shortly &nbsp;:)
         <IconButton
           css={`
             padding: 0;

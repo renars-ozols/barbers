@@ -12,7 +12,7 @@ const upAndDown = keyframes`
   }
 `
 
-export const Hero = styled(BackgroundImage)`
+export const StyledBackground = styled(BackgroundImage)`
   height: 95vh;
   display: flex;
   flex-direction: column;

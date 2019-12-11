@@ -12,6 +12,7 @@ export const Message = styled.div`
   position: relative;
   display: ${({ show }) => (show ? 'block' : 'none')};
   background-color: #1fe841;
+  font-size: 1.8rem;
   border-radius: 4px;
   padding: 1rem;
   color: ${({ theme }) => theme.colors.greyLight1};

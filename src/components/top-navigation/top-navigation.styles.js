@@ -4,6 +4,7 @@ export const NavWrapper = styled.nav`
   position: absolute;
   width: 100%;
   display: flex;
+  z-index: 100;
 `
 
 export const LeftNav = styled.div`
