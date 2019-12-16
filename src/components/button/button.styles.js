@@ -5,7 +5,7 @@ export const ButtonContainer = styled.button`
   font-size: 2rem;
   border: none;
   padding: 0.5rem;
-  border-radius: 4px;
+  border-radius: ${({ noRadius }) => (noRadius ? '0' : '4px')};
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.greyLight1};
   letter-spacing: 0.3rem;
