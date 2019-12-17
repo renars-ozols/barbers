@@ -30,8 +30,8 @@ const HeadingTwo = styled.h2`
 
 const HeadingThree = styled.h3`
   font-size: 3rem;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
   font-weight: 300;
   ${baseStyle};
 
@@ -42,16 +42,17 @@ const HeadingThree = styled.h3`
 `
 
 const HeadingFour = styled.h4`
-  font-size: 2.8rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  font-weight: 300;
   ${baseStyle};
 `
 
 const HeadingFive = styled.h5`
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
   font-weight: 300;
   ${baseStyle};
 `

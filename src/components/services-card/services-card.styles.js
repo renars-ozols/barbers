@@ -5,7 +5,8 @@ import Heading from '../heading/heading'
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 4rem;
+  grid-template-rows: 30rem auto auto;
+  grid-row-gap: 3.5rem;
   background-color: ${({ theme }) => theme.colors.greyLight1};
 `
 export const StyledImg = styled(Img)`

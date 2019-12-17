@@ -7,7 +7,7 @@ import { Container, StyledImg, Title, Feature } from './services-card.styles'
 const ServicesCard = ({ image, price, time, title }) => (
   <Container>
     <StyledImg
-      fixed={image}
+      fluid={image}
       alt={title}
       style={{
         width: `100%`,
@@ -39,7 +39,6 @@ const ServicesCard = ({ image, price, time, title }) => (
       css={`
         box-shadow: none;
         grid-column: 1 / -1;
-        font-size: 2.5rem;
       `}
     >
       Book Now
