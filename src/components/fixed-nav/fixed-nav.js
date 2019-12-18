@@ -8,14 +8,16 @@ import {
   enableBodyScroll,
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock'
+import * as Scroll from 'react-scroll'
 
 import IconButton from '../icon-button/icon-button'
 import CustomModal from '../modal/modal'
 import { NavWrapper } from './fixed-nav.styles'
 
-class FixedNav extends React.PureComponent {
+class FixedNav extends React.Component {
   constructor() {
     super()
+    this.scrollToTop = this.scrollToTop.bind(this)
     this.state = {
       navbarIsVisible: false,
       modalIsOpen: false,
@@ -95,6 +97,20 @@ class FixedNav extends React.PureComponent {
     this.setState({ modalIsOpen: false })
   }
 
+  scrollToTop() {
+    if (this.state.modalIsOpen) {
+      this.closeModal()
+      Scroll.animateScroll.scrollToTop({
+        smooth: 'easeInOutQuint',
+        duration: 1000,
+      })
+    }
+    Scroll.animateScroll.scrollToTop({
+      smooth: 'easeInOutQuint',
+      duration: 1000,
+    })
+  }
+
   componentDidMount() {
     clearAllBodyScrollLocks()
     this.targetElement = this.targetRef.current
@@ -122,7 +138,7 @@ class FixedNav extends React.PureComponent {
           >
             <FiMessageSquare />
           </IconButton>
-          <IconButton name="Back to Top">
+          <IconButton name="Back to Top" onClick={this.scrollToTop}>
             <FaArrowAltCircleUp />
           </IconButton>
         </NavWrapper>
