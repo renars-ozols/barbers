@@ -14,7 +14,7 @@ import IconButton from '../icon-button/icon-button'
 import CustomModal from '../modal/modal'
 import { NavWrapper } from './fixed-nav.styles'
 
-class FixedNav extends React.Component {
+class FixedNav extends React.PureComponent {
   constructor() {
     super()
     this.scrollToTop = this.scrollToTop.bind(this)
@@ -66,7 +66,7 @@ class FixedNav extends React.Component {
     else this.setState({ navbarIsVisible: false })
   }
 
-  handler = throttle(this.checkVisible, 500)
+  handler = throttle(this.checkVisible, 5000)
 
   openModal = (styles, label) => {
     if (!this.state.modalIsOpen) {
