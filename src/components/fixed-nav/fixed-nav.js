@@ -66,7 +66,7 @@ class FixedNav extends React.PureComponent {
     else this.setState({ navbarIsVisible: false })
   }
 
-  handler = throttle(this.checkVisible, 5000)
+  handler = throttle(this.checkVisible, 500)
 
   openModal = (styles, label) => {
     if (!this.state.modalIsOpen) {

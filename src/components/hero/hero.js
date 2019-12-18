@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Fade from 'react-reveal/Fade'
+//import Fade from 'react-reveal/Fade'
 import { FaArrowCircleDown } from 'react-icons/fa'
 
 import {
@@ -31,9 +31,7 @@ const Hero = () => {
   return (
     <StyledBackground Tag={`section`} fluid={imageStack}>
       <LogoWrapper>
-        <Fade top>
-          <StyledLogo />
-        </Fade>
+        <StyledLogo />
       </LogoWrapper>
       <ArrowLink href="#">
         <FaArrowCircleDown />
