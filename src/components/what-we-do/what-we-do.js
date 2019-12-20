@@ -43,7 +43,13 @@ const WhatWeDo = () => {
 
   return (
     <section>
-      <Heading h2 center>
+      <Heading
+        h2
+        center
+        css={`
+          margin: 8rem 0;
+        `}
+      >
         What We Do
       </Heading>
       <Wrapper>
@@ -74,7 +80,13 @@ const WhatWeDo = () => {
           />
         </Fade>
       </Wrapper>
-      <Heading h5 center>
+      <Heading
+        h5
+        center
+        css={`
+          margin-bottom: 8rem;
+        `}
+      >
         For full service & price list click{' '}
         <Link
           to="/"

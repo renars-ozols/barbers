@@ -25,6 +25,7 @@ const HeadingTwo = styled.h2`
   font-size: 3.5rem;
   margin-bottom: 4rem;
   margin-top: 4rem;
+  font-weight: 300;
   ${baseStyle};
 `
 

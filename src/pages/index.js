@@ -5,6 +5,7 @@ import Layout from '../components/layouts/main'
 import Hero from '../components/hero/hero'
 import Box from '../components/box/box'
 import WhatWeDo from '../components/what-we-do/what-we-do'
+import OurStory from '../components/our-story/our-story'
 import SEO from '../components/seo/seo'
 import Content from '../components/content'
 
@@ -14,6 +15,9 @@ const IndexPage = () => (
     <Hero />
     <Box>
       <WhatWeDo />
+    </Box>
+    <OurStory />
+    <Box>
       <Link to="/page-2/">Go to page 2</Link>
       <Content />
       <Content />
