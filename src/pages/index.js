@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layouts/main'
 import Hero from '../components/hero/hero'
@@ -18,9 +17,6 @@ const IndexPage = () => (
     </Box>
     <OurStory />
     <Box>
-      <Link to="/page-2/">Go to page 2</Link>
-      <Content />
-      <Content />
       <Content />
     </Box>
   </Layout>
