@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Fade from 'react-reveal/Fade'
 import { Link } from 'gatsby'
 
 import Heading from '../heading/heading'
@@ -52,31 +53,33 @@ const WhatWeDo = () => {
         What We Do
       </Heading>
       <Wrapper>
-        <ServicesCard
-          image={data.haircut.childImageSharp.fluid}
-          title="Haircut"
-          price="30"
-          time="45"
-        />
-        <ServicesCard
-          image={data.beardTrim.childImageSharp.fluid}
-          title="Beard & Mustache Trim"
-          price="15"
-          time="20"
-        />
-        <ServicesCard
-          image={data.towelShave.childImageSharp.fluid}
-          title="Hot Towel Shave"
-          price="40"
-          time="45"
-        />
+        <Fade left>
+          <ServicesCard
+            image={data.haircut.childImageSharp.fluid}
+            title="Haircut"
+            price="30"
+            time="45"
+          />
+          <ServicesCard
+            image={data.beardTrim.childImageSharp.fluid}
+            title="Beard & Mustache Trim"
+            price="15"
+            time="20"
+          />
+          <ServicesCard
+            image={data.towelShave.childImageSharp.fluid}
+            title="Hot Towel Shave"
+            price="40"
+            time="45"
+          />
 
-        <ServicesCard
-          image={data.kidsCuts.childImageSharp.fluid}
-          title="Kids Cuts"
-          price="15"
-          time="30"
-        />
+          <ServicesCard
+            image={data.kidsCuts.childImageSharp.fluid}
+            title="Kids Cuts"
+            price="15"
+            time="30"
+          />
+        </Fade>
       </Wrapper>
       <Heading
         h5
