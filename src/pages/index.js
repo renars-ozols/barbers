@@ -5,6 +5,7 @@ import Hero from '../components/hero/hero'
 import Box from '../components/box/box'
 import WhatWeDo from '../components/what-we-do/what-we-do'
 import OurStory from '../components/our-story/our-story'
+import PriceList from '../components/price-list/price-list'
 import SEO from '../components/seo/seo'
 
 const IndexPage = () => (
@@ -15,6 +16,9 @@ const IndexPage = () => (
       <WhatWeDo />
     </Box>
     <OurStory />
+    <Box>
+      <PriceList />
+    </Box>
   </Layout>
 )
 
