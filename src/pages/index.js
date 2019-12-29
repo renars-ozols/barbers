@@ -6,6 +6,7 @@ import Box from '../components/box/box'
 import WhatWeDo from '../components/what-we-do/what-we-do'
 import OurStory from '../components/our-story/our-story'
 import PriceList from '../components/price-list/price-list'
+import Gallery from '../components/gallery/gallery'
 import SEO from '../components/seo/seo'
 
 const IndexPage = () => (
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <OurStory />
     <Box>
       <PriceList />
+      <Gallery />
     </Box>
   </Layout>
 )
