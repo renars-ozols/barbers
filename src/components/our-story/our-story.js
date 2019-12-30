@@ -22,7 +22,7 @@ const OurStory = () => {
     `linear-gradient(rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 0.8))`,
   ].reverse()
   return (
-    <Background Tag="section" fluid={imageStack}>
+    <Background image={data.background.childImageSharp.fluid.src}>
       <InnerWrapper>
         <Fade bottom>
           <Heading

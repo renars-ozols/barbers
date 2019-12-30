@@ -3,12 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Fade from 'react-reveal/Fade'
 import { FaArrowCircleDown } from 'react-icons/fa'
 
-import {
-  StyledBackground,
-  LogoWrapper,
-  StyledLogo,
-  ArrowLink,
-} from './hero.styles'
+import { StyledBg, LogoWrapper, StyledLogo, ArrowLink } from './hero.styles'
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -29,7 +24,7 @@ const Hero = () => {
   ].reverse()
 
   return (
-    <StyledBackground Tag={`section`} fluid={imageStack}>
+    <StyledBg image={data.background.childImageSharp.fluid.src}>
       <LogoWrapper>
         <Fade top>
           <StyledLogo />
@@ -38,7 +33,7 @@ const Hero = () => {
       <ArrowLink href="#">
         <FaArrowCircleDown />
       </ArrowLink>
-    </StyledBackground>
+    </StyledBg>
   )
 }
 

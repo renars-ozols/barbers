@@ -12,7 +12,13 @@ const upAndDown = keyframes`
   }
 `
 
-export const StyledBackground = styled(BackgroundImage)`
+export const StyledBg = styled.section`
+  background-image: linear-gradient(
+      rgba(16, 29, 44, 0.93),
+      rgba(16, 29, 44, 0.93)
+    ),
+    url(${props => props.image});
+  background-size: cover;
   height: 95vh;
   display: flex;
   flex-direction: column;
