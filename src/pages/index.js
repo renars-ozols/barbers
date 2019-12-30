@@ -15,15 +15,9 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Hero />
     <Box>
-      <Hero />
-      <Hero />
+      <WhatWeDo />
     </Box>
-    <Content />
-    <Hero />
-    <Content />
-    <Hero />
-    <Content />
-    <Hero />
+    <OurStory />
     <Box>
       <PriceList />
       <Content />
