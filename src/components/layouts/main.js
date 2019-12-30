@@ -7,10 +7,10 @@ import GlobalStyles from '../../utils/global.styles'
 import Header from '../header/header'
 
 const Layout = ({ children }) => {
-  if (typeof window !== 'undefined') {
-    // eslint-disable-next-line global-require
-    require('smooth-scroll')('a[href*="#"]', { speed: 300 })
-  }
+  // if (typeof window !== 'undefined') {
+  //   // eslint-disable-next-line global-require
+  //   require('smooth-scroll')('a[href*="#"]', { speed: 300 })
+  // }
   return (
     <ThemeProvider theme={theme}>
       <>
