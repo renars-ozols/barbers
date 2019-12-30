@@ -22,6 +22,15 @@ const IndexPage = () => (
       <PriceList />
       <Content />
     </Box>
+    <Hero />
+    <Box>
+      <WhatWeDo />
+    </Box>
+    <OurStory />
+    <Box>
+      <PriceList />
+      <Content />
+    </Box>
   </Layout>
 )
 
