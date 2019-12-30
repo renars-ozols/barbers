@@ -2,7 +2,7 @@ import React from 'react'
 
 const Content = () => (
   <div>
-    <p>
+    <p style={{ fontSize: `1.5rem` }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor
       posuere ac ut consequat semper. Nulla at volutpat diam ut venenatis.
