@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Content = () => (
-  <div id="test1">
-    <h1>
+  <div>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor
       posuere ac ut consequat semper. Nulla at volutpat diam ut venenatis.
@@ -53,7 +53,7 @@ const Content = () => (
       consectetur purus ut faucibus pulvinar. Mattis ullamcorper velit sed
       ullamcorper morbi. Facilisis sed odio morbi quis commodo odio aenean sed
       adipiscing.
-    </h1>
+    </p>
   </div>
 )
 
