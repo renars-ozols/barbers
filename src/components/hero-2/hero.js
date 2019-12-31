@@ -1,9 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+//import Fade from 'react-reveal/Fade'
 import { FaArrowCircleDown } from 'react-icons/fa'
 
-import Background from '../background/backgroud'
-import { LogoWrapper, StyledLogo, ArrowLink } from './hero.styles'
+import {
+  StyledBackground,
+  LogoWrapper,
+  StyledLogo,
+  ArrowLink,
+} from './hero.styles'
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -17,15 +22,21 @@ const Hero = () => {
       }
     }
   `)
+
+  const imageStack = [
+    data.background.childImageSharp.fluid,
+    `linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93))`,
+  ].reverse()
+
   return (
-    <Background image={data.background.childImageSharp.fluid}>
+    <StyledBackground Tag={`section`} fluid={imageStack}>
       <LogoWrapper>
         <StyledLogo />
       </LogoWrapper>
       <ArrowLink href="#">
         <FaArrowCircleDown />
       </ArrowLink>
-    </Background>
+    </StyledBackground>
   )
 }
 

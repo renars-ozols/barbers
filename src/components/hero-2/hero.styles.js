@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
 
 import Logo from '../../images/logo.svg'
 
@@ -9,6 +10,16 @@ const upAndDown = keyframes`
   100% { 
     transform: translateY(-1rem); 
   }
+`
+
+export const StyledBackground = styled(BackgroundImage)`
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+
+  ${({ theme }) => theme.media.tablet`
+      height: 50vh;
+  `}
 `
 
 export const LogoWrapper = styled.div`
