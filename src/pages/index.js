@@ -5,19 +5,20 @@ import Content from '../components/content'
 import Hero from '../components/hero/hero'
 import Box from '../components/box/box'
 import WhatWeDo from '../components/what-we-do/what-we-do'
-import OurStory from '../components/our-story/our-story'
+//import OurStory from '../components/our-story/our-story'
 import PriceList from '../components/price-list/price-list'
 import Gallery from '../components/gallery/gallery'
 import SEO from '../components/seo/seo'
+import Bg from '../components/bg/bg'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Hero />
+    <Bg />
     <Box>
       <WhatWeDo />
     </Box>
-    <OurStory />
+
     <Box>
       <PriceList />
       <Gallery />
