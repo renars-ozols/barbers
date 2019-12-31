@@ -1,13 +1,7 @@
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-export const Background = styled.section`
-  background-image: linear-gradient(
-      rgba(16, 29, 44, 0.93),
-      rgba(16, 29, 44, 0.93)
-    ),
-    url(${props => props.image});
-  background-size: cover;
+export const Background = styled(BackgroundImage)`
   ${({ theme }) => theme.media.tablet`
      min-height: 60vh;
   `}
