@@ -20,7 +20,7 @@ const IndexPage = () => (
     <Content />
     <Box>
       <PriceList />
-      <Content />
+      <Gallery />
     </Box>
   </Layout>
 )
