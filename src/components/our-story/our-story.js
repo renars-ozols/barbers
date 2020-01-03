@@ -22,7 +22,7 @@ const OurStory = () => {
     `linear-gradient(rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 0.8))`,
   ].reverse()
   return (
-    <div style={{ backgroundColor: `black` }}>
+    <Background Tag="section" fluid={imageStack}>
       <InnerWrapper>
         <Heading
           h2
@@ -52,7 +52,7 @@ const OurStory = () => {
           molestie.
         </Paragraph>
       </InnerWrapper>
-    </div>
+    </Background>
   )
 }
 
