@@ -29,14 +29,14 @@ const Hero = () => {
   ].reverse()
 
   return (
-    <StyledBackground Tag={`section`} fluid={imageStack}>
+    <div style={{ height: `100vh`, backgroundColor: `black` }}>
       <LogoWrapper>
         <StyledLogo />
       </LogoWrapper>
       <ArrowLink href="#">
         <FaArrowCircleDown />
       </ArrowLink>
-    </StyledBackground>
+    </div>
   )
 }
 
