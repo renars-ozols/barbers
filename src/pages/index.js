@@ -13,7 +13,10 @@ import SEO from '../components/seo/seo'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Hero />
+    <Gallery />
+    <Gallery />
+    <Gallery />
+    <Gallery />
     <Box>
       <WhatWeDo />
     </Box>
