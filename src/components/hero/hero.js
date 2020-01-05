@@ -16,7 +16,7 @@ const Hero = () => {
       background: file(relativePath: { eq: "hero.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -29,7 +29,7 @@ const Hero = () => {
   ].reverse()
 
   return (
-    <StyledBackground Tag={`section`} fluid={imageStack}>
+    <StyledBackground Tag={`section`} fluid={imageStack} fadeIn="false">
       <LogoWrapper>
         <StyledLogo />
       </LogoWrapper>

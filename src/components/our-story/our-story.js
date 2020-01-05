@@ -11,7 +11,7 @@ const OurStory = () => {
       background: file(relativePath: { eq: "salon.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -22,7 +22,7 @@ const OurStory = () => {
     `linear-gradient(rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 0.8))`,
   ].reverse()
   return (
-    <Background Tag="section" fluid={imageStack}>
+    <Background Tag="section" fluid={imageStack} fadeIn="false">
       <InnerWrapper>
         <Heading
           h2
