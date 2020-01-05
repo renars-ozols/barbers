@@ -20,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
