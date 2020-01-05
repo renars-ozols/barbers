@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 //import Fade from 'react-reveal/Fade'
 import { FaArrowCircleDown } from 'react-icons/fa'
 
@@ -29,7 +28,16 @@ const Hero = () => {
     `linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93))`,
   ].reverse()
 
-  return <Img fluid={data.background.childImageSharp.fluid} />
+  return (
+    <StyledBackground Tag={`section`} fluid={imageStack}>
+      <LogoWrapper>
+        <StyledLogo />
+      </LogoWrapper>
+      <ArrowLink href="#">
+        <FaArrowCircleDown />
+      </ArrowLink>
+    </StyledBackground>
+  )
 }
 
 export default Hero
