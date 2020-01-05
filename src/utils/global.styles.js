@@ -15,17 +15,17 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
   }
 
   body {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    color: ${({ theme }) => theme.colors.greyDark2}
+    color: ${({ theme }) => theme.colors.greyDark2};
+    -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
   }
 `
 export default GlobalStyle
