@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Layout from '../components/layouts/main'
 import Content from '../components/content'
 import Hero from '../components/hero/hero'
 import Box from '../components/box/box'
@@ -11,7 +10,7 @@ import Gallery from '../components/gallery/gallery'
 import SEO from '../components/seo/seo'
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Home" />
     <Hero />
     <Box>
@@ -22,7 +21,7 @@ const IndexPage = () => (
       <PriceList />
       <Gallery />
     </Box>
-  </Layout>
+  </>
 )
 
 export default IndexPage

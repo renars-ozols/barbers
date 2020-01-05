@@ -33,6 +33,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layouts/main`),
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-preact`,
     {

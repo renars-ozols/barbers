@@ -22,10 +22,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1.7;
     color: ${({ theme }) => theme.colors.greyDark2};
-    -webkit-transform: translate3d(0, 0, 0);
-   -moz-transform: translate3d(0, 0, 0);
-   -ms-transform: translate3d(0, 0, 0);
-   transform: translate3d(0, 0, 0);
   }
 `
 export default GlobalStyle
