@@ -1,9 +1,9 @@
 import 'typeface-lato'
 
-export const onClientEntry = () => {
+export const onClientEntry = async () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {
-    return import(`intersection-observer`)
+    await import(`intersection-observer`)
     console.log(`# IntersectionObserver is polyfilled!`)
   }
 }
