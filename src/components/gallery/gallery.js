@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Masonry from 'react-masonry-css'
 import Img from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
-import glam from 'glam'
 
 import Heading from '../heading/heading'
 import { Container } from './gallery.styles'
