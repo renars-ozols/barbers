@@ -17,7 +17,6 @@ export const Title = styled(Heading)`
   grid-column: 1 / -1;
   justify-self: center;
   align-self: end;
-  z-index: 10;
   letter-spacing: 2px;
   padding: 0 1rem;
   width: 80%;

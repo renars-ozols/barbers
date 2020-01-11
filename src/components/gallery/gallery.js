@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Masonry from 'react-masonry-css'
 import Img from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
+import glam from 'glam'
 
 import Heading from '../heading/heading'
 import { Container } from './gallery.styles'
@@ -76,7 +77,19 @@ const Gallery = () => {
       {ModalGateway && (
         <ModalGateway>
           {modalIsOpen && (
-            <Modal onClose={closeModal}>
+            <Modal
+              onClose={closeModal}
+              styles={{
+                blanket: base => ({
+                  ...base,
+                  zIndex: '200',
+                }),
+                positioner: base => ({
+                  ...base,
+                  zIndex: '300',
+                }),
+              }}
+            >
               <Carousel
                 views={data.allFile.edges.map(
                   ({
