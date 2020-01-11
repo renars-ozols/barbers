@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Content from '../components/content'
 import Hero from '../components/hero/hero'
 import Box from '../components/box/box'
 import WhatWeDo from '../components/what-we-do/what-we-do'

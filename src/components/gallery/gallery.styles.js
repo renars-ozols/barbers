@@ -12,8 +12,9 @@ export const Container = styled.div`
   }
 
   /* Style your items */
-  & .my-masonry-grid_column > div {
+  & .my-masonry-grid_column > a {
     /* change div to reference your elements you put in <Masonry> */
+    display: block;
     background: grey;
     margin-bottom: 30px;
   }

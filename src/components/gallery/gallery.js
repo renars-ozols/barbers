@@ -12,7 +12,8 @@ const Gallery = () => {
   const [modalCurrentIndex, setModalCurrentIndex] = useState(0)
 
   const closeModal = () => setModalIsOpen(false)
-  const openModal = imageIndex => {
+  const openModal = (imageIndex, e) => {
+    e.preventDefault()
     setModalCurrentIndex(imageIndex)
     setModalIsOpen(true)
   }
@@ -66,9 +67,13 @@ const Gallery = () => {
               },
               i
             ) => (
-              <div key={fluid.src} onClick={() => openModal(i)}>
+              <a
+                href={fluid.src}
+                key={fluid.src}
+                onClick={e => openModal(i, e)}
+              >
                 <Img fluid={fluid} />
-              </div>
+              </a>
             )
           )}
         </Masonry>
