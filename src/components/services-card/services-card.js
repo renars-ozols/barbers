@@ -39,6 +39,7 @@ const ServicesCard = ({ image, price, time, title }) => (
       css={`
         box-shadow: none;
         grid-column: 1 / -1;
+        padding: 1rem;
       `}
     >
       Book Now

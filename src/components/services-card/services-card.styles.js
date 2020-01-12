@@ -18,7 +18,7 @@ export const Title = styled(Heading)`
   justify-self: center;
   align-self: end;
   letter-spacing: 2px;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   width: 80%;
   transform: translateY(50%);
   background-color: ${({ theme }) => theme.colors.secondary};
