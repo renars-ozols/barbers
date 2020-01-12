@@ -1,9 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
+
 //import Fade from 'react-reveal/Fade'
 
 import Heading from '../heading/heading'
-import { Background, InnerWrapper, Paragraph } from './our-story.styles'
+import { InnerWrapper, Paragraph } from './our-story.styles'
 
 const OurStory = () => {
   const data = useStaticQuery(graphql`
@@ -22,7 +24,7 @@ const OurStory = () => {
     `linear-gradient(rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 0.8))`,
   ].reverse()
   return (
-    <Background Tag="section" fluid={imageStack} fadeIn="false">
+    <BackgroundImage Tag="section" fluid={imageStack} fadeIn="false">
       <InnerWrapper>
         <Heading
           h2
@@ -52,7 +54,7 @@ const OurStory = () => {
           molestie.
         </Paragraph>
       </InnerWrapper>
-    </Background>
+    </BackgroundImage>
   )
 }
 
