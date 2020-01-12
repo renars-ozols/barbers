@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Masonry from 'react-masonry-css'
 import Img from 'gatsby-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
+import Fade from 'react-reveal/Fade'
 
 import Heading from '../heading/heading'
 import { Container } from './gallery.styles'
@@ -67,13 +68,11 @@ const Gallery = () => {
               },
               i
             ) => (
-              <a
-                href={fluid.src}
-                key={fluid.src}
-                onClick={e => openModal(i, e)}
-              >
-                <Img fluid={fluid} />
-              </a>
+              <Fade left key={fluid.src}>
+                <a href={fluid.src} onClick={e => openModal(i, e)}>
+                  <Img fluid={fluid} />
+                </a>
+              </Fade>
             )
           )}
         </Masonry>
