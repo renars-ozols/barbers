@@ -11,6 +11,7 @@ const PriceList = () => (
       css={`
         margin-top: 8rem;
       `}
+      id="pricelist"
     >
       Pricelist
     </Heading>

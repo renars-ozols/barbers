@@ -13,6 +13,7 @@ const ContactUs = () => (
       css={`
         margin-bottom: 2rem;
       `}
+      id="contact"
     >
       Contact Us
     </Heading>

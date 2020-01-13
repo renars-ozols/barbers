@@ -5,20 +5,20 @@ module.exports = {
     author: `Renars`,
     menuLinks: [
       {
-        name: 'Link1',
-        link: '/#test1',
+        name: 'About',
+        link: '/#about',
       },
       {
-        name: 'Link2',
-        link: '/#test2',
+        name: 'Prices',
+        link: '/#pricelist',
       },
       {
-        name: 'Link3',
-        link: '/#test3',
+        name: 'Showcase',
+        link: '/#showcase',
       },
       {
-        name: 'Link4',
-        link: '/#test1',
+        name: 'Contact',
+        link: '/#contact',
       },
     ],
   },

@@ -50,6 +50,7 @@ const Gallery = () => {
         css={`
           margin-top: 8rem;
         `}
+        id="showcase"
       >
         Showcase
       </Heading>

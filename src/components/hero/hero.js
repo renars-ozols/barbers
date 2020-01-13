@@ -35,7 +35,7 @@ const Hero = () => {
           <StyledLogo />
         </Fade>
       </LogoWrapper>
-      <ArrowLink href="#">
+      <ArrowLink href="#about">
         <FaArrowCircleDown />
       </ArrowLink>
     </StyledBackground>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Fade from 'react-reveal/Fade'
-import { Link } from 'gatsby'
 
 import Heading from '../heading/heading'
 import ServicesCard from '../services-card/services-card'
@@ -49,6 +48,7 @@ const WhatWeDo = () => {
         css={`
           margin: 8rem 0;
         `}
+        id="about"
       >
         What We Do
       </Heading>
@@ -89,14 +89,14 @@ const WhatWeDo = () => {
         `}
       >
         For full service & price list click{' '}
-        <Link
-          to="/"
+        <a
+          href="/#pricelist"
           css={`
             color: currentColor;
           `}
         >
           here
-        </Link>
+        </a>
       </Heading>
     </section>
   )
