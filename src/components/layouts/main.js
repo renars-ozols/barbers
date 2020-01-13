@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../../themes/main'
 import GlobalStyles from '../../utils/global.styles'
 import Header from '../header/header'
+import Footer from '../footer/footer'
 
 const Layout = ({ children }) => {
   if (typeof window !== 'undefined') {
@@ -17,11 +18,7 @@ const Layout = ({ children }) => {
         <GlobalStyles />
         <Header />
         <main>{children}</main>
-        <footer style={{ height: `50vh`, backgroundColor: `black` }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </>
     </ThemeProvider>
   )
