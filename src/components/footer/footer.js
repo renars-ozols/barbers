@@ -4,18 +4,18 @@ import ContactUs from '../contact-us/contact-us'
 import OpeningHours from '../opening-hours/opening-hours'
 import Map from '../map/map'
 
+import { Container, Credit } from './footer.styles'
+
 const Footer = () => (
-  <footer style={{ backgroundColor: `black`, padding: `2rem 0` }}>
+  <Container>
     <ContactUs />
     <OpeningHours />
     <Map />
-    <p style={{ marginTop: `2rem`, textAlign: `center`, fontSize: `1rem` }}>
+    <Credit>
       Built and designed by Renars for his portfolio.
-    </p>
-    <p style={{ marginBottom: `4rem`, textAlign: `center`, fontSize: `1rem` }}>
-      © {new Date().getFullYear()} Renars{' '}
-    </p>
-  </footer>
+      <br /> © {new Date().getFullYear()} Renars{' '}
+    </Credit>
+  </Container>
 )
 
 export default Footer

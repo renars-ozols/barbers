@@ -12,6 +12,7 @@ const ContactUs = () => (
       noMarginTop
       css={`
         margin-bottom: 2rem;
+        color: ${({ theme }) => theme.colors.greyLight1};
       `}
       id="contact"
     >

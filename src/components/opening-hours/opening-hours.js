@@ -10,6 +10,7 @@ const OpeningHours = () => (
       center
       css={`
         margin: 2rem 0;
+        color: ${({ theme }) => theme.colors.greyLight1};
       `}
     >
       Opening Hours
