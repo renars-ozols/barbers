@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+export const Container = styled.div`
+  ${({ theme }) => theme.media.tablet`
+     max-width: 80rem;
+     margin: 0 auto;
+  `}
+`
+
 export const Item = styled.div`
   font-size: 2rem;
   display: flex;

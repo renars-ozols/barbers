@@ -5,7 +5,13 @@ import Heading from '../heading/heading'
 import { Group } from './contact-us.styles'
 
 const ContactUs = () => (
-  <div>
+  <div
+    css={`
+      ${({ theme }) => theme.media.laptop`
+  flex: 1 0 50%;
+`}
+    `}
+  >
     <Heading
       h4
       center

@@ -62,7 +62,7 @@ const WhatWeDo = () => {
           />
           <ServicesCard
             image={data.beardTrim.childImageSharp.fluid}
-            title="Beard & Mustache Trim"
+            title="Beard Trim"
             price="15"
             time="20"
           />

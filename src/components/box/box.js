@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Box = ({ children }) => (
-  <div style={{ padding: `0 2rem` }}>{children}</div>
-)
+import { Container } from './box.styles'
+
+const Box = ({ children }) => <Container>{children}</Container>
 
 export default Box
