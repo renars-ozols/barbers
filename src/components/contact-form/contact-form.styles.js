@@ -30,8 +30,8 @@ export const Heading = styled.h1`
 `
 export const CloseButton = styled(IconButton)`
   position: absolute;
-  top: -3%;
-  right: -3%;
+  top: -1.5rem;
+  right: -1.5rem;
   padding: 0.5rem;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.primary};

@@ -1,46 +1,77 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { IoIosPin, IoIosCall, IoIosAt, IoIosGlobe } from 'react-icons/io'
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock'
 
 import Heading from '../heading/heading'
-import { Group } from './contact-us.styles'
+import CustomModal from '../modal/modal'
+import { FiMail } from 'react-icons/fi'
 
-const ContactUs = () => (
-  <div
-    css={`
-      ${({ theme }) => theme.media.laptop`
-  flex: 1 0 50%;
-`}
-    `}
-  >
-    <Heading
-      h4
-      center
-      noMarginTop
-      css={`
-        margin-bottom: 2rem;
-        color: ${({ theme }) => theme.colors.greyLight1};
-      `}
-      id="contact"
-    >
-      Contact Us
-    </Heading>
-    <Group>
-      <IoIosPin style={{ marginRight: `1rem` }} />
-      <div>256 Some Fake Street, Dublin</div>
-    </Group>
-    <Group>
-      <IoIosCall style={{ marginRight: `1rem` }} />
-      <div>+353 1 111 1111</div>
-    </Group>
-    <Group>
-      <IoIosAt style={{ marginRight: `1rem` }} />
-      <div>info@barbers.com</div>
-    </Group>
-    <Group>
-      <IoIosGlobe style={{ marginRight: `1rem` }} />
-      <div>www.yourwebsite.com</div>
-    </Group>
-  </div>
-)
+import { BtnMessage, Group } from './contact-us.styles'
+
+const ContactUs = () => {
+  const [isModalOpen, setModalOpen] = useState(false)
+  const targetRef = useRef(null)
+  let targetElement = null
+
+  const openModal = () => {
+    setModalOpen(true)
+    disableBodyScroll(targetElement)
+  }
+  const closeModal = () => {
+    setModalOpen(false)
+    enableBodyScroll(targetElement)
+  }
+
+  useEffect(() => {
+    targetElement = targetRef
+  })
+
+  return (
+    <div>
+      <Heading
+        h4
+        center
+        noMarginTop
+        css={`
+          margin-bottom: 2rem;
+          color: ${({ theme }) => theme.colors.greyLight1};
+        `}
+        id="contact"
+      >
+        Contact Us
+      </Heading>
+      <Group>
+        <IoIosPin style={{ marginRight: `1rem` }} />
+        <div>256 Some Fake Street, Dublin</div>
+      </Group>
+      <Group>
+        <IoIosCall style={{ marginRight: `1rem` }} />
+        <div>+353 1 111 1111</div>
+      </Group>
+      <Group>
+        <IoIosAt style={{ marginRight: `1rem` }} />
+        <div>info@barbers.com</div>
+      </Group>
+      <Group style={{ marginBottom: `2rem` }}>
+        <IoIosGlobe style={{ marginRight: `1rem` }} />
+        <div>www.yourwebsite.com</div>
+      </Group>
+      <BtnMessage noRadius onClick={openModal}>
+        <FiMail />
+        &nbsp; Leave Message
+      </BtnMessage>
+      <CustomModal
+        targetRef={targetRef}
+        closeModal={closeModal}
+        modalIsOpen={isModalOpen}
+        label={'Message'}
+      />
+    </div>
+  )
+}
 
 export default ContactUs

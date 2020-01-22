@@ -4,18 +4,13 @@ import Heading from '../heading/heading'
 import { Group } from './opening-hours.styles'
 
 const OpeningHours = () => (
-  <div
-    css={`
-      ${({ theme }) => theme.media.laptop`
-  flex: 1 0 50%;
-`}
-    `}
-  >
+  <div>
     <Heading
       h4
       center
+      noMarginTop
       css={`
-        margin: 2rem 0;
+        margin-bottom: 2rem;
         color: ${({ theme }) => theme.colors.greyLight1};
       `}
     >

@@ -1,7 +1,7 @@
 import React from 'react'
 import { throttle } from 'lodash'
 import { IoIosMenu } from 'react-icons/io'
-import { FiMessageSquare } from 'react-icons/fi'
+import { FiMail } from 'react-icons/fi'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
 import {
   disableBodyScroll,
@@ -22,44 +22,11 @@ class FixedNav extends React.PureComponent {
       navbarIsVisible: false,
       modalIsOpen: false,
       modalLabel: '',
-      modalStyles: {},
     }
   }
 
   targetRef = React.createRef()
   targetElement = null
-
-  messageStyles = {
-    overlay: {
-      background: 'rgba(0, 0, 0, 0.7)',
-      zIndex: '200',
-    },
-    content: {
-      top: '10%',
-      left: '10%',
-      right: '10%',
-      bottom: '10%',
-      border: 'none',
-      overflow: 'visible',
-      padding: '0',
-    },
-  }
-
-  menuStyles = {
-    overlay: {
-      background: 'transparent',
-    },
-    content: {
-      display: 'flex',
-      justifyContent: 'center',
-      background: '#c69963',
-      top: '60%',
-      left: '1rem',
-      right: '50%',
-      bottom: '5.5rem',
-      border: 'none',
-    },
-  }
 
   checkVisible = () => {
     if (window.pageYOffset > 0) this.setState({ navbarIsVisible: true })
@@ -68,13 +35,12 @@ class FixedNav extends React.PureComponent {
 
   handler = throttle(this.checkVisible, 500)
 
-  openModal = (styles, label) => {
+  openModal = label => {
     if (!this.state.modalIsOpen) {
       disableBodyScroll(this.targetElement)
       this.setState({
         modalIsOpen: true,
         modalLabel: label,
-        modalStyles: styles,
       })
     } else if (this.state.modalIsOpen && this.state.modalLabel !== label) {
       this.setState(
@@ -85,7 +51,6 @@ class FixedNav extends React.PureComponent {
           this.setState({
             modalIsOpen: true,
             modalLabel: label,
-            modalStyles: styles,
           })
         }
       )
@@ -122,21 +87,19 @@ class FixedNav extends React.PureComponent {
   }
 
   render() {
-    const { navbarIsVisible, modalIsOpen, modalLabel, modalStyles } = this.state
+    const { navbarIsVisible, modalIsOpen, modalLabel } = this.state
     return (
       <>
         <NavWrapper visible={navbarIsVisible}>
           <IconButton
             style={{ marginRight: `auto` }}
-            onClick={() => this.openModal(this.menuStyles, 'Menu')}
+            onClick={() => this.openModal('Menu')}
           >
             <IoIosMenu />
           </IconButton>
 
-          <IconButton
-            onClick={() => this.openModal(this.messageStyles, 'Message')}
-          >
-            <FiMessageSquare />
+          <IconButton onClick={() => this.openModal('Message')}>
+            <FiMail />
           </IconButton>
           <IconButton name="Back to Top" onClick={this.scrollToTop}>
             <FaArrowAltCircleUp />
@@ -144,7 +107,6 @@ class FixedNav extends React.PureComponent {
         </NavWrapper>
         <CustomModal
           targetRef={this.targetRef}
-          customStyles={modalStyles}
           closeModal={this.closeModal}
           modalIsOpen={modalIsOpen}
           label={modalLabel}
