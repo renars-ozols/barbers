@@ -56,8 +56,8 @@ const ContactForm = ({ closeModal }) => {
           css={`
             padding: 0;
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 0rem;
+            right: 0rem;
           `}
           onClick={() => setMessage(false)}
         >

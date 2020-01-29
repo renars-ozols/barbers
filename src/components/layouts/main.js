@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../../themes/main'
 import GlobalStyles from '../../utils/global.styles'
 import Header from '../header/header'
+import ScrollToTop from '../scroll-to-top/scroll-to-top'
 import Footer from '../footer/footer'
 
 const Layout = ({ children }) => {
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
       <>
         <GlobalStyles />
         <Header />
+        <ScrollToTop />
         <main>{children}</main>
         <Footer />
       </>

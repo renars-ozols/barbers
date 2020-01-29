@@ -1,10 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { IoIosPin, IoIosCall, IoIosAt, IoIosGlobe } from 'react-icons/io'
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 import Heading from '../heading/heading'
 import CustomModal from '../modal/modal'

@@ -4,7 +4,7 @@ export const ButtonContainer = styled.button`
   font-family: inherit;
   font-size: 2rem;
   border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: ${({ noRadius }) => (noRadius ? '0' : '4px')};
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.greyLight1};
