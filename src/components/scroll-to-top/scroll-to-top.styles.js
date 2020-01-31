@@ -15,5 +15,6 @@ export const Button = styled.button`
       z-index: 1000;
       background: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.greyLight1};
+      box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
   `}
 `

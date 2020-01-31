@@ -37,8 +37,8 @@ const Gallery = () => {
 
   const breakpointColumnsObj = {
     default: 4,
-    1100: 3,
-    700: 2,
+    1440: 3,
+    768: 2,
     500: 1,
   }
 
