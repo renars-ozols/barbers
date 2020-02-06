@@ -18,7 +18,7 @@ export const StyledBackground = styled(BackgroundImage)`
   flex-direction: column;
 
   ${({ theme }) => theme.media.tablet`
-      height: 50vh;
+      height: 60vh;
   `}
 `
 
