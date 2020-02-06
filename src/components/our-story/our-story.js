@@ -12,7 +12,7 @@ const OurStory = () => {
       background: file(relativePath: { eq: "salon.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1440, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
