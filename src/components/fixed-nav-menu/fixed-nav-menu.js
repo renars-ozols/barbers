@@ -21,7 +21,7 @@ const Menu = ({ closeModal }) => {
   return (
     <StyledNav>
       {links.map(link => (
-        <StyledLink key={link.name} to={link.link} onClick={closeModal}>
+        <StyledLink key={link.name} href={link.link} onClick={closeModal}>
           {link.name}
         </StyledLink>
       ))}

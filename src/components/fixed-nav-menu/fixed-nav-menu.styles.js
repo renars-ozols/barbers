@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 
 export const StyledNav = styled.nav`
   font-size: 2.5rem;
@@ -8,7 +7,7 @@ export const StyledNav = styled.nav`
   align-items: center;
   justify-content: center;
 `
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.a`
   color: ${({ theme }) => theme.colors.greyLight1};
   text-decoration: none;
 `

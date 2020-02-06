@@ -12,7 +12,7 @@ export const Button = styled.button`
       border-radius: 50%;
       padding: 1rem;
       border: none;
-      z-index: 1000;
+      z-index: 100;
       background: ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.greyLight1};
       box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.2);

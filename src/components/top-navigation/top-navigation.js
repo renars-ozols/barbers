@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Link } from 'gatsby'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 import { NavWrapper, LeftNav, RightNav, NavLink } from './top-navigation.styles'
@@ -23,7 +22,7 @@ const TopNavigation = () => {
     <NavWrapper>
       <LeftNav>
         {links.map(link => (
-          <NavLink as={Link} key={link.name} to={link.link}>
+          <NavLink key={link.name} href={link.link}>
             {link.name}
           </NavLink>
         ))}

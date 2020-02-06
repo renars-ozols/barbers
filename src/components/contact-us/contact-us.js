@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { IoIosPin, IoIosCall, IoIosAt, IoIosGlobe } from 'react-icons/io'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
@@ -11,20 +11,15 @@ import { BtnMessage, Group } from './contact-us.styles'
 const ContactUs = () => {
   const [isModalOpen, setModalOpen] = useState(false)
   const targetRef = useRef(null)
-  let targetElement = null
 
   const openModal = () => {
     setModalOpen(true)
-    disableBodyScroll(targetElement)
+    disableBodyScroll(targetRef)
   }
   const closeModal = () => {
     setModalOpen(false)
-    enableBodyScroll(targetElement)
+    enableBodyScroll(targetRef)
   }
-
-  useEffect(() => {
-    targetElement = targetRef
-  })
 
   return (
     <div>
