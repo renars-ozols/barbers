@@ -10,6 +10,7 @@ export const NavWrapper = styled.nav`
   z-index: 100;
   background: ${({ theme }) => theme.colors.primary};
   transition: all 1s;
+  box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
 
   ${({ theme }) => theme.media.tablet`
       display: none;
