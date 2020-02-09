@@ -12,7 +12,7 @@ const Footer = () => (
       <ContactUs />
       <OpeningHours />
     </FlexBox>
-    {/* <Map /> */}
+    <Map />
     <Credit>
       Built and designed by Renars for his portfolio.
       <br /> © {new Date().getFullYear()} Renars{' '}
