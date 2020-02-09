@@ -28,13 +28,13 @@ const TopNavigation = () => {
         ))}
       </LeftNav>
       <RightNav>
-        <NavLink href="#">
+        <NavLink href="#" aria-label="Link to Facebook page">
           <FaFacebook />
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="#" aria-label="Link to Instagram page">
           <FaInstagram />
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="#" aria-label="Link to Twitter page">
           <FaTwitter />
         </NavLink>
       </RightNav>

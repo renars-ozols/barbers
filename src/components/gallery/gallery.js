@@ -28,6 +28,9 @@ const Gallery = () => {
               fluid(maxWidth: 768, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
+              resolutions {
+                originalName
+              }
             }
           }
         }
@@ -41,7 +44,7 @@ const Gallery = () => {
     768: 2,
     500: 1,
   }
-
+  console.log(data)
   return (
     <div>
       <Heading
@@ -64,14 +67,18 @@ const Gallery = () => {
             (
               {
                 node: {
-                  childImageSharp: { fluid },
+                  childImageSharp: { fluid, resolutions },
                 },
               },
               i
             ) => (
               <Fade left key={fluid.src}>
-                <a href={fluid.src} onClick={e => openModal(i, e)}>
-                  <Img fluid={fluid} />
+                <a
+                  href={fluid.src}
+                  onClick={e => openModal(i, e)}
+                  aria-label={`Link to ${resolutions.originalName}`}
+                >
+                  <Img fluid={fluid} alt={resolutions.originalName} />
                 </a>
               </Fade>
             )

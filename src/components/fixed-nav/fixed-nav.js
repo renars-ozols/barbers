@@ -94,14 +94,18 @@ class FixedNav extends React.PureComponent {
           <IconButton
             style={{ marginRight: `auto` }}
             onClick={() => this.openModal('Menu')}
+            aria-label="Open menu"
           >
             <IoIosMenu />
           </IconButton>
 
-          <IconButton onClick={() => this.openModal('Message')}>
+          <IconButton
+            onClick={() => this.openModal('Message')}
+            aria-label="Open message modal"
+          >
             <FiMail />
           </IconButton>
-          <IconButton name="Back to Top" onClick={this.scrollToTop}>
+          <IconButton aria-label="Back to top" onClick={this.scrollToTop}>
             <FaArrowAltCircleUp />
           </IconButton>
         </NavWrapper>
