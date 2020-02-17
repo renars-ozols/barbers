@@ -4,7 +4,6 @@ export const StyledNav = styled.nav`
   font-size: 2.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 `
 export const StyledLink = styled.a`

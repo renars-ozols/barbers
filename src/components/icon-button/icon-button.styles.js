@@ -7,6 +7,7 @@ export const Button = styled.button`
   border: none;
   background-color: transparent;
   color: ${({ theme }) => theme.colors.greyLight1};
+  cursor: pointer;
 
   &:active,
   &:focus {

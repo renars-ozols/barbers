@@ -25,4 +25,10 @@ export const NavLink = styled.a`
   padding: 0 1rem;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.greyLight1};
+
+  ${({ theme }) => theme.media.laptop`
+      &:hover {
+        border-bottom: 2px solid;
+      }
+  `}
 `

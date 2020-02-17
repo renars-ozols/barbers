@@ -19,11 +19,13 @@ const CustomModal = ({ modalIsOpen, closeModal, targetRef, label }) => {
           display: 'flex',
           justifyContent: 'center',
           background: '#c69963',
-          top: '60%',
+          top: '55%',
           left: '1rem',
           right: '50%',
           bottom: '5.5rem',
           border: 'none',
+          borderRadius: 'none',
+          boxShadow: '0 1rem 1.5rem rgba(0,0,0,0.2)',
         },
       }
     } else if (label === 'Message') {
@@ -43,6 +45,7 @@ const CustomModal = ({ modalIsOpen, closeModal, targetRef, label }) => {
           margin: '0 auto',
           maxHeight: '50rem',
           maxWidth: '150rem',
+          borderRadius: 'none',
         },
       }
     }

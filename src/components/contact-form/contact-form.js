@@ -3,7 +3,6 @@ import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { IoIosClose, IoIosCloseCircleOutline } from 'react-icons/io'
 
-import IconButton from '../icon-button/icon-button'
 import Button from '../button/button'
 import FormInput from '../form-input/form-input.component'
 import {
@@ -12,6 +11,7 @@ import {
   StyledForm,
   Heading,
   CloseButton,
+  InfoBtn,
 } from './contact-form.styles'
 
 const ContactForm = ({ closeModal }) => {
@@ -52,17 +52,9 @@ const ContactForm = ({ closeModal }) => {
         Thank You!
         <br />
         We will get back to you shortly &nbsp;:)
-        <IconButton
-          css={`
-            padding: 0;
-            position: absolute;
-            top: 0rem;
-            right: 0rem;
-          `}
-          onClick={() => setMessage(false)}
-        >
+        <InfoBtn onClick={() => setMessage(false)}>
           <IoIosCloseCircleOutline />
-        </IconButton>
+        </InfoBtn>
       </Message>
       <StyledForm name="Contact Form" onSubmit={formik.handleSubmit} noValidate>
         <FormInput
@@ -117,6 +109,8 @@ const ContactForm = ({ closeModal }) => {
             margin-top: 2rem;
           `}
           upperCase
+          noRadius
+          noShadow
           type="submit"
           disabled={formik.isSubmitting}
         >

@@ -10,8 +10,9 @@ export const ButtonContainer = styled.button`
   color: ${({ theme }) => theme.colors.greyLight1};
   letter-spacing: 0.3rem;
   text-transform: ${({ upperCase }) => (upperCase ? 'uppercase' : 'none')};
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-
+  box-shadow: ${({ noShadow }) =>
+    noShadow ? '0' : '0 0.5rem 1rem rgba(0, 0, 0, 0.2)'};
+  cursor: pointer;
   &:active,
   &:focus {
     outline: none;

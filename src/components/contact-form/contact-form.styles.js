@@ -13,7 +13,6 @@ export const Message = styled.div`
   display: ${({ show }) => (show ? 'block' : 'none')};
   background-color: #1fe841;
   font-size: 1.8rem;
-  border-radius: 4px;
   padding: 1rem;
   color: ${({ theme }) => theme.colors.greyLight1};
 `
@@ -36,9 +35,23 @@ export const CloseButton = styled(IconButton)`
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.primary};
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  cursor: pointer;
 
   &:active,
   &:focus {
     transform: none;
+  }
+`
+export const InfoBtn = styled(IconButton)`
+  padding: 0;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+
+  &:active,
+  &:focus {
+    transform: none;
+    box-shadow: none;
   }
 `

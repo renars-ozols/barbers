@@ -1,8 +1,13 @@
 import React from 'react'
-import Button from '../button/button'
 import { FaEuroSign, FaRegClock } from 'react-icons/fa'
 
-import { Container, StyledImg, Title, Feature } from './services-card.styles'
+import {
+  Container,
+  StyledImg,
+  Title,
+  Feature,
+  Btn,
+} from './services-card.styles'
 
 const ServicesCard = ({ image, price, time, title }) => (
   <Container>
@@ -34,16 +39,16 @@ const ServicesCard = ({ image, price, time, title }) => (
         {time}min
       </p>
     </Feature>
-    <Button
+    <Btn
       noRadius
+      noShadow
       css={`
-        box-shadow: none;
         grid-column: 1 / -1;
         padding: 1rem;
       `}
     >
       Book Now
-    </Button>
+    </Btn>
   </Container>
 )
 

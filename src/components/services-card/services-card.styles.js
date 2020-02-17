@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import Button from '../button/button'
 import Heading from '../heading/heading'
 
 export const Container = styled.div`
@@ -8,6 +9,11 @@ export const Container = styled.div`
   grid-template-rows: 30rem auto auto;
   grid-row-gap: 3.5rem;
   background-color: ${({ theme }) => theme.colors.greyLight1};
+
+  &:focus-within {
+    transform: translateY(-1px);
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+  }
 `
 export const StyledImg = styled(Img)`
   width: 100%;
@@ -30,4 +36,12 @@ export const Feature = styled.div`
   align-items: center;
   font-size: 1.8rem;
   margin: 1.5rem 0 0 2.5rem;
+`
+export const Btn = styled(Button)`
+  &:active,
+  &:focus {
+    outline: none;
+    transform: none;
+    box-shadow: none;
+  }
 `

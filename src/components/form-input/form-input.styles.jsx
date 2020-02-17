@@ -23,7 +23,6 @@ export const FormInputContainer = styled.input`
   display: block;
   width: 100%;
   border: ${({ border }) => border || `1px solid ${subColor}`};
-  border-radius: 4px;
   margin-top: 2rem;
 
   &:focus {
