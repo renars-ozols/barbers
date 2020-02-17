@@ -50,7 +50,7 @@ const Gallery = () => {
         h2
         center
         css={`
-          margin-top: 8rem;
+          margin: 8rem 0;
         `}
         id="showcase"
       >
