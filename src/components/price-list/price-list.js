@@ -4,7 +4,7 @@ import Heading from '../heading/heading'
 import { Container, Item, Description, Price } from './price-list.styles'
 
 const PriceList = () => (
-  <div>
+  <section>
     <Heading
       h2
       center
@@ -41,7 +41,7 @@ const PriceList = () => (
         <Price>15€</Price>
       </Item>
     </Container>
-  </div>
+  </section>
 )
 
 export default PriceList

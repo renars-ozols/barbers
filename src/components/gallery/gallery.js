@@ -44,9 +44,8 @@ const Gallery = () => {
     768: 2,
     500: 1,
   }
-  console.log(data)
   return (
-    <div>
+    <section>
       <Heading
         h2
         center
@@ -118,7 +117,7 @@ const Gallery = () => {
           )}
         </ModalGateway>
       )}
-    </div>
+    </section>
   )
 }
 
