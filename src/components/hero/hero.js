@@ -13,7 +13,7 @@ import {
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "hero.jpg" }) {
+      background: file(relativePath: { eq: "barber-shop.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1990, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp

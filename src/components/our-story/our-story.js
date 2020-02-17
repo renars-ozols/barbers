@@ -9,7 +9,7 @@ import { InnerWrapper, Paragraph } from './our-story.styles'
 const OurStory = () => {
   const data = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "salon.jpg" }) {
+      background: file(relativePath: { eq: "chairs.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1990, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
