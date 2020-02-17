@@ -11,7 +11,7 @@ const OurStory = () => {
     query {
       background: file(relativePath: { eq: "chairs.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1990, quality: 100) {
+          fluid(maxWidth: 1990, quality: 10) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

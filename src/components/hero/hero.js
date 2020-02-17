@@ -15,7 +15,7 @@ const Hero = () => {
     query {
       background: file(relativePath: { eq: "barber-shop.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1990, quality: 100) {
+          fluid(maxWidth: 1990, quality: 10) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
